@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function Tile({}) {
+export default function Tile({ tile: { id, state }, onRevealTile }) {
   return (
-    <div></div>
+    <div className={`tile ${state}`} onClick={() => onRevealTile(id)}></div>
   );
 }
