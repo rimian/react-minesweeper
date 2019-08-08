@@ -20,13 +20,14 @@ function tileStateReducer(tileState) {
       ),
     };
   };
-}
+};
 
 // The reducer describes how the contents of the store change for each action
 export const reducer = (state, action) => {
+  console.warn('reducer');
   switch (action.type) {
     case actions.REVEAL_TILE:
-        return tileStateReducer('REVEAL_TILE')(state, action);
+      return tileStateReducer('REVEAL_TILE')(state, action);
     default:
       return state;
   }

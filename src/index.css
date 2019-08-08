@@ -1,14 +1,13 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 .tile {
   width: 20px;
   height: 20px;
-  background-color: #ccc;
+}
+
+.DEFAULT {
+  background-color: #bbb;
+}
+
+.REVEAL_TILE {
+  background-color: #ddd;
 }

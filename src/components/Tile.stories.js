@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import Tile from './Tile';
 
 export const tile = {
+  id: '1',
   state: 'DEFAULT',
 };
 
