@@ -8,10 +8,14 @@ export const actions = {
 };
 
 // The action creators are how you bundle actions with the data required to execute them
-export const revealTile = id => ({ type: actions.REVEAL_TILE, id });
+export const onRevealTile = id => {
+  console.warn('revealTile');
+  return { type: actions.REVEAL_TILE, id };
+};
 
 // All our reducers simply change the state of a single tile.
 function tileStateReducer(tileState) {
+  console.warn('tileStateReducer');
   return (state, action) => {
     return {
       ...state,
@@ -24,7 +28,7 @@ function tileStateReducer(tileState) {
 
 // The reducer describes how the contents of the store change for each action
 export const reducer = (state, action) => {
-  console.warn('reducer');
+  console.warn('reducer', state, action);
   switch (action.type) {
     case actions.REVEAL_TILE:
       return tileStateReducer('REVEAL_TILE')(state, action);

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { archiveTask, pinTask } from '../lib/redux';
+import { onRevealTile } from '../lib/redux';
 
 export default function Tile({ tile: { id, state }, onRevealTile }) {
   return (
