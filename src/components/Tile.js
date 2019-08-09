@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default function Tile() {
-  return (
-    <div className={`tile DEFAULT`}></div>
-  );
-};
+class Tile extends React.Component {
+  render() {
+    return <div className="tile DEFAULT"></div>;
+  }
+}
+
+export default Tile;

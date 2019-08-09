@@ -1,13 +1,10 @@
 import React from 'react';
 import './index.css';
-
-import Tile from './components/Tile';
+import Field from './components/Field';
 
 function App() {
   return (
-    <div className="App">
-      <Tile/>
-    </div>
+    <Field/>
   );
 };
 
