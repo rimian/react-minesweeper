@@ -4,10 +4,10 @@ import Tile from './Tile';
 class Board extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div data-testid="board">
         <Tile/>
         <Tile/>
-      </React.Fragment>
+      </div>
     );
   }
 }
