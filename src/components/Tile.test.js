@@ -15,7 +15,7 @@ it('tile is blank by default', () => {
 
   const element = getByTestId(document.body, 'tile');
 
-  expect(element.className).toEqual('tile DEFAULT');
+  expect(element.classList).toContain('DEFAULT');
 });
 
 it('tile is revealed', () => {
@@ -26,5 +26,5 @@ it('tile is revealed', () => {
   const element = getByTestId(document.body, 'tile');
   fireEvent.click(element);
 
-  expect(element.className).toEqual('tile BLANK');
+  expect(element.classList).toContain('BLANK');
 });
