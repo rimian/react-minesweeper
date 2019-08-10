@@ -3,7 +3,12 @@ import Tile from './Tile';
 
 class Field extends React.Component {
   render() {
-    return (<Tile/>);
+    return (
+      <React.Fragment>
+        <Tile state='DEFAULT'/>
+        <Tile state='DEFAULT'/>
+      </React.Fragment>
+    );
   }
 }
 
