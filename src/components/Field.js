@@ -5,8 +5,8 @@ class Field extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Tile state='DEFAULT'/>
-        <Tile state='DEFAULT'/>
+        <Tile/>
+        <Tile/>
       </React.Fragment>
     );
   }
