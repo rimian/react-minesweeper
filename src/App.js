@@ -1,10 +1,10 @@
 import React from 'react';
 import './index.css';
-import Field from './components/Field';
+import Board from './components/Board';
 
 function App() {
   return (
-    <Field/>
+    <Board/>
   );
 };
 

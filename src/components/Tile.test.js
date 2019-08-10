@@ -3,8 +3,6 @@ import { cleanup, fireEvent, render } from '@testing-library/react';
 import { getByTestId } from '@testing-library/dom'
 import Tile from './Tile';
 
-
-
 // automatically unmount and cleanup DOM after the test is finished.
 afterEach(cleanup);
 

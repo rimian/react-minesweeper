@@ -1,7 +1,7 @@
 import React from 'react';
 import Tile from './Tile';
 
-class Field extends React.Component {
+class Board extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -12,4 +12,4 @@ class Field extends React.Component {
   }
 }
 
-export default Field;
+export default Board;
