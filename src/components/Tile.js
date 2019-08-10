@@ -10,7 +10,11 @@ class Tile extends React.Component {
   }
 
   render() {
-    return <button className={`tile ${this.state.value}`} onClick={() => this.setState({ value: 'BLANK' })}></button>;
+    return <button
+      data-testid="tile"
+      className={`tile ${this.state.value}`}
+      onClick={() => this.setState({ value: 'BLANK' })}>
+    </button>;
   }
 }
 

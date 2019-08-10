@@ -1,14 +1,30 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
+import { getByTestId } from '@testing-library/dom'
 import Tile from './Tile';
+
+
 
 // automatically unmount and cleanup DOM after the test is finished.
 afterEach(cleanup);
 
-it('tile is truthy', () => {
-  const tile = render(
+it('tile is blank by default', () => {
+  const component = render(
     <Tile/>,
   );
 
-  expect(tile).toBeTruthy();
+  const element = getByTestId(document.body, 'tile');
+
+  expect(element.className).toEqual('tile DEFAULT');
+});
+
+it('tile is revealed', () => {
+  const component = render(
+    <Tile/>,
+  );
+
+  const element = getByTestId(document.body, 'tile');
+  fireEvent.click(element);
+
+  expect(element.className).toEqual('tile BLANK');
 });
