@@ -8,9 +8,14 @@ class Board extends React.Component {
     this.state = { tiles, value: 'DEFAULT' };
   }
 
-  handleClick() {
-    const tiles = this.state.tiles.map((tile) => Object.assign(tile, { value: 'BLANK' }));
+  handleClick(i) {
+    if(i + 1 > this.props.cols) {
+      return;
+    }
+    const tiles = this.state.tiles;
+    tiles[i].value = 'BLANK';
     this.setState({ tiles });
+    this.handleClick(i + 1);
   }
 
   render() {
@@ -19,7 +24,7 @@ class Board extends React.Component {
         key={tile.id}
         value={tile.value}
         id={tile.id + 1}
-        onClick={() => this.handleClick()}
+        onClick={() => this.handleClick(tile.id)}
       />
     });
 
