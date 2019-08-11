@@ -3,7 +3,7 @@ import '../index.css';
 
 function Tile(props) {
   return (<button
-    data-testid="tile"
+    data-testid={`tile-${props.id}`}
     className={`tile ${props.value}`}
     onClick={props.onClick}
   ></button>);

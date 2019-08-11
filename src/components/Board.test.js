@@ -14,6 +14,13 @@ it('board exists', () => {
 
 it('has buttons', () => {
   const { container } = render(<Board />);
-  const buttons = container.querySelectorAll('button');
+  const buttons = container.querySelectorAll('button.DEFAULT');
+  expect(buttons.length).toEqual(2);
+});
+
+it('changes the tiles to revealed', () => {
+  const { container, getByTestId } = render(<Board />);
+  fireEvent.click(getByTestId('tile-1'))
+  const buttons = container.querySelectorAll('button.BLANK');
   expect(buttons.length).toEqual(2);
 });

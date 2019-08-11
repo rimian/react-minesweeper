@@ -8,10 +8,10 @@ afterEach(cleanup);
 
 it('tile has a state', () => {
   const component = render(
-    <Tile value='DEFAULT'/>,
+    <Tile id="2" value='DEFAULT'/>,
   );
 
-  const element = getByTestId(document.body, 'tile');
+  const element = getByTestId(document.body, 'tile-2');
 
   expect(element.classList).toContain('DEFAULT');
 });
