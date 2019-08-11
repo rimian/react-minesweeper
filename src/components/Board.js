@@ -15,10 +15,12 @@ class Board extends React.Component {
     return (
       <div data-testid="board">
         <Tile
+          data-testid={'tile-1'}
           value={this.state.value}
           onClick={() => this.handleClick()}
         />
         <Tile
+          data-testid={'tile-2'}
           value={this.state.value}
           onClick={() => this.handleClick()}
         />
