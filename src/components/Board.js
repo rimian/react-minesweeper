@@ -12,18 +12,19 @@ class Board extends React.Component {
   }
 
   render() {
+    const cols = [];
+    for(let c = 0; c < this.props.cols; c++) {
+      cols.push(<Tile
+        key={c}
+        value={this.state.value}
+        id={c + 1}
+        onClick={() => this.handleClick()}
+      />);
+    }
+
     return (
       <div data-testid="board">
-        <Tile
-          value={this.state.value}
-          id="1"
-          onClick={() => this.handleClick()}
-        />
-        <Tile
-          id="2"
-          value={this.state.value}
-          onClick={() => this.handleClick()}
-        />
+        {cols}
       </div>
     );
   }
