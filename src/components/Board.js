@@ -4,27 +4,28 @@ import Tile from './Tile';
 class Board extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: 'DEFAULT' };
+    const tiles = [...Array(this.props.cols).keys()].map((id) => ({ id, value: 'DEFAULT' }));
+    this.state = { tiles, value: 'DEFAULT' };
   }
 
   handleClick() {
-    this.setState({ value: 'BLANK' });
+    const tiles = this.state.tiles.map((tile) => Object.assign(tile, { value: 'BLANK' }));
+    this.setState({ tiles });
   }
 
   render() {
-    const cols = [];
-    for(let c = 0; c < this.props.cols; c++) {
-      cols.push(<Tile
-        key={c}
-        value={this.state.value}
-        id={c + 1}
+    const tiles = this.state.tiles.map((tile) => {
+      return <Tile
+        key={tile.id}
+        value={tile.value}
+        id={tile.id + 1}
         onClick={() => this.handleClick()}
-      />);
-    }
+      />
+    });
 
     return (
       <div data-testid="board">
-        {cols}
+        {tiles}
       </div>
     );
   }
