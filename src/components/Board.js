@@ -18,7 +18,7 @@ class Board extends React.Component {
     tiles[i].value = 'BLANK';
     this.setState({ tiles });
 
-    getNearestIds(tiles, i).map((id) => {
+    getNearestIds(this.props, i).map((id) => {
       this.handleClick(id);
     });
   }
