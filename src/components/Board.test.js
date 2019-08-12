@@ -20,7 +20,7 @@ it('has buttons', () => {
 
 it('changes the tiles to revealed', () => {
   const { container, getByTestId } = render(<Board cols={10} />);
-  fireEvent.click(getByTestId('tile-1'))
+  fireEvent.click(getByTestId('tile-1'));
   const buttons = container.querySelectorAll('button.BLANK');
   expect(buttons.length).toEqual(10);
 });

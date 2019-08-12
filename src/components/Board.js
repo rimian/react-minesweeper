@@ -5,17 +5,17 @@ import { getNearestIds } from '../lib/minesweeper';
 class Board extends React.Component {
   constructor(props) {
     super(props);
-    const tiles = [...Array(this.props.cols).keys()].map((id) => ({ id, value: 'DEFAULT' }));
+    const tiles = [...Array(this.props.cols).keys()].map((id) => ({ id: id + 1, value: 'DEFAULT' }));
     this.state = { tiles };
   }
 
   handleClick(i) {
-    if(i + 1 > this.props.cols) {
+    if(i > this.props.cols) {
       return;
     }
 
     const tiles = this.state.tiles;
-    tiles[i].value = 'BLANK';
+    tiles[i - 1].value = 'BLANK';
     this.setState({ tiles });
 
     getNearestIds(tiles, i).map((id) => {
@@ -28,7 +28,7 @@ class Board extends React.Component {
       return <Tile
         key={tile.id}
         value={tile.value}
-        id={tile.id + 1}
+        id={tile.id}
         onClick={() => this.handleClick(tile.id)}
       />
     });
