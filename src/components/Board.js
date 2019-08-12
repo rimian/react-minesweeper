@@ -1,5 +1,6 @@
 import React from 'react';
 import Tile from './Tile';
+import { getNearestIds } from '../lib/minesweeper';
 
 class Board extends React.Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class Board extends React.Component {
     const tiles = this.state.tiles;
     tiles[i].value = 'BLANK';
     this.setState({ tiles });
-    this.handleClick(i + 1);
+    const nextIds = getNearestIds(i);
+    this.handleClick(nextIds);
   }
 
   render() {
