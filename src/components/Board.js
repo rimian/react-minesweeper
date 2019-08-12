@@ -10,10 +10,6 @@ class Board extends React.Component {
   }
 
   handleClick(i) {
-    if(i + 1 > this.props.cols) {
-      return;
-    }
-
     const tiles = this.state.tiles;
     tiles[i].value = 'BLANK';
     this.setState({ tiles });
