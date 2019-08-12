@@ -6,7 +6,7 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     const tiles = [...Array(this.props.cols).keys()].map((id) => ({ id, value: 'DEFAULT' }));
-    this.state = { tiles, value: 'DEFAULT' };
+    this.state = { tiles };
   }
 
   handleClick(i) {
