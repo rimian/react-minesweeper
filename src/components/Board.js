@@ -13,11 +13,14 @@ class Board extends React.Component {
     if(i + 1 > this.props.cols) {
       return;
     }
+
     const tiles = this.state.tiles;
     tiles[i].value = 'BLANK';
     this.setState({ tiles });
-    const nextIds = getNearestIds(i);
-    this.handleClick(nextIds);
+
+    getNearestIds(tiles, i).map((id) => {
+      this.handleClick(id);
+    });
   }
 
   render() {

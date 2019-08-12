@@ -1,4 +1,4 @@
 
-export function getNearestIds(id) {
-  return id + 1;
+export function getNearestIds(tiles, id) {
+  return [id + 1];
 }
