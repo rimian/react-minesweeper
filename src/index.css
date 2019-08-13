@@ -11,3 +11,7 @@
 .BLANK {
   background-color: #eee;
 }
+
+.EXPLODED {
+  background-color: #f00;
+}
