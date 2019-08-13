@@ -5,9 +5,9 @@ test('finds the nearest tiles either side', () => {
 });
 
 test('finds the nearest tiles either side', () => {
-  expect(getNearestIds({ cols: 6 }, 2)).toEqual([3]);
+  expect(getNearestIds({ cols: 6 }, 2)).toEqual([1, 3]);
 });
 
 test('finds the nearest tiles for the right most tile', () => {
-  expect(getNearestIds({ cols: 6 }, 5)).toEqual([]);
+  expect(getNearestIds({ cols: 6 }, 5)).toEqual([4]);
 });
